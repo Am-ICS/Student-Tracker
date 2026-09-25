@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentTracker.Views.MainPage"
+             BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            
+            <VerticalStackLayout Spacing="3">
+                <Label Text="StudyTrack"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       TextColor="#006C70"/>
+
+                <Label Text="Keep track of your study tasks"
+                       FontSize="16"
+                       TextColor="#666666"/>
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="10">
+
+                <Button Grid.Column="0"
+                        Text="+ Add Task"
+                        Command="{Binding AddTaskNavPageCommand}"
+                        BackgroundColor="#006C70"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        FontAttributes="Bold"/>
+
+                <Button Grid.Column="1"
+                        Text="🔎 Filter"
+                        Clicked="OnFilterClicked"
+                        BackgroundColor="White"
+                        TextColor="#006C70"
+                        BorderColor="#006C70"
+                        BorderWidth="1"
+                        CornerRadius="12"
+                        HeightRequest="50"
+                        FontAttributes="Bold"/>
+            </Grid>
+
+            <Border IsVisible="{Binding IsVisible}"
+                    BackgroundColor="White"
+                    Stroke="#E0E0E0"
+                    StrokeThickness="1"
+                    Padding="15">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Search Tasks"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#333333"/>
+
+                    <Entry Text="{Binding NameFilter}"
+                           Placeholder="Task name"
+                           BackgroundColor="#F5F7FA"/>
+
+                    <Entry Text="{Binding Description}"
+                           Placeholder="Description"
+                           BackgroundColor="#F5F7FA"/>
+
+                    <Entry Text="{Binding CourseFilter}"
+                           Placeholder="Course"
+                           BackgroundColor="#F5F7FA"/>
+
+                    <Button Text="Search"
+                            Command="{Binding FilterStudentCommand}"
+                            BackgroundColor="#006C70"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"/>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Label Text="My Tasks"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#333333"
+                   Margin="0,5,0,0"/>
+
+
+            <CollectionView
+                ItemsSource="{Binding FilterStudents}"
+                SelectedItem="{Binding SelectTask}"
+                SelectionMode="Single">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="12"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                        <Border BackgroundColor="White"
+                                Stroke="#E5E5E5"
+                                Padding="15">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="15"/>
+                            </Border.StrokeShape>
+
+                            <VerticalStackLayout Spacing="6">
+                                
+                                <Label Text="{Binding Name}"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="#006C70"/>
+                                
+                                <Label Text="{Binding Description}"
+                                       FontSize="15"
+                                       TextColor="#555555"/>
+                                
+                                <Label Text="{Binding Course}"
+                                       FontSize="15"
+                                       TextColor="#555555"/>
+                                <Label Text="{Binding DueDate, StringFormat='Due: {0:MM/dd/yyyy}'}"
+                                       FontSize="14"
+                                       TextColor="#777777"/>
+                                
+                                <Label Text="{Binding IsCompleted, StringFormat='Completed: {0}'}"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       TextColor="#006C70"/>
+
+                            </VerticalStackLayout>
+
+                        </Border>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

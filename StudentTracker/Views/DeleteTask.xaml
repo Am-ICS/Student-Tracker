@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentTracker.Views.DeleteTask"
+             BackgroundColor="#F5F7FA">
+
+    <VerticalStackLayout Padding="20"
+                         Spacing="15"
+                         VerticalOptions="Center">
+        
+        <VerticalStackLayout Spacing="5">
+
+            <Label Text="Delete Task"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="#B3261E"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Are you sure you want to delete this task?"
+                   FontSize="15"
+                   TextColor="#777777"
+                   HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+        
+        <Border BackgroundColor="White"
+                Stroke="#E5E5E5"
+                StrokeThickness="1"
+                Padding="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="18"/>
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="8">
+
+                <Label Text="TASK"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#777777"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="{Binding TaskToDelete.Name}"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#006C70"
+                       HorizontalOptions="Center"/>
+
+            </VerticalStackLayout>
+
+        </Border>
+        
+        <Button Text="Delete Task"
+                Clicked="onDeleteTaskClicked"
+                BackgroundColor="#B3261E"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50"
+                FontAttributes="Bold"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

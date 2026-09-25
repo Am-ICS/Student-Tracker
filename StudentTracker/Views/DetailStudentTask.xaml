@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentTracker.Views.DetailStudentTask"
+             BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="15">
+               
+            <Button Text="-Back to Task List"
+                    Clicked="OnBackButtonClicked"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    TextColor="#006C70"
+                    FontAttributes="Bold"
+                    Padding="0" />
+
+            <VerticalStackLayout Spacing="3">
+                <Label Text="Task Details"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="#006C70"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="View your task information"
+                       FontSize="14"
+                       TextColor="#777777"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+            
+            <Border BackgroundColor="White"
+                    Stroke="#E5E5E5"
+                    StrokeThickness="1"
+                    Padding="20">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="TASK NAME"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           TextColor="#777777"/>
+
+                    <Label Text="{Binding Name}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#006C70"/>
+                    
+                    <Label Text="DESCRIPTION"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           TextColor="#777777"
+                           Margin="0,8,0,0"/>
+
+                    <Label Text="{Binding Description}"
+                           FontSize="16"
+                           TextColor="#333333"/>
+                    
+                    <Label Text="COURSE / CATEGORY"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           TextColor="#777777"
+                           Margin="0,8,0,0"/>
+
+                    <Label Text="{Binding Course}"
+                           FontSize="16"
+                           TextColor="#333333"/>
+                    
+                    <Label Text="DUE DATE"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           TextColor="#777777"
+                           Margin="0,8,0,0"/>
+
+                    <Label Text="{Binding DueDate, StringFormat='{0:MM/dd/yyyy}'}"
+                           FontSize="16"
+                           TextColor="#333333"/>
+                    
+                    <Label Text="COMPLETION STATUS"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           TextColor="#777777"
+                           Margin="0,8,0,0"/>
+
+                    <Label Text="{Binding IsCompleted, StringFormat='Completed: {0}'}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#006C70"/>
+
+                </VerticalStackLayout>
+
+            </Border>
+            
+            <Button Text="Delete Task"
+                    Clicked="OnDeleteButtonClicked"
+                    BackgroundColor="#B3261E"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    FontAttributes="Bold"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

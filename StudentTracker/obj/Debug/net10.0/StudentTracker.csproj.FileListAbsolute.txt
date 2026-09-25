@@ -1,0 +1,13 @@
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\bin\Debug\net10.0\StudentTracker.deps.json
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\bin\Debug\net10.0\StudentTracker.dll
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\bin\Debug\net10.0\StudentTracker.pdb
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.csproj.AssemblyReference.cache
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.AssemblyInfoInputs.cache
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.AssemblyInfo.cs
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.csproj.CoreCompileInputs.cache
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\XamlC.stamp
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.dll
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\refint\StudentTracker.dll
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\StudentTracker.pdb
+C:\Users\aloos\RiderProjects\StudentTrackerProject\StudentTracker\obj\Debug\net10.0\ref\StudentTracker.dll
