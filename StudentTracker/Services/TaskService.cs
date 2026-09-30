@@ -7,11 +7,14 @@ namespace StudentTracker.Services;
 public class TaskService : ITaskService
 {
     public ObservableCollection<TaskStudent> Tasks { get; private set; }
+    private IStorage storage;
 
-    public TaskService(ObservableCollection<TaskStudent> tasks)
+    public TaskService(ObservableCollection<TaskStudent> tasks, IStorage storage)
     {
         Tasks = tasks;
+        this.storage = storage;
     }
+    
 
     public async Task Add(TaskStudent task)
     {
@@ -23,13 +26,13 @@ public class TaskService : ITaskService
         if (Tasks.Any(t => t.Name == task.Name))
             throw new ArgumentException("Name alrewady exists");
         Tasks.Add(task);
-        await Storage.Save(Tasks.ToList());
+        await this.storage.Save(Tasks.ToList());
 
         return;
 
     }
 
-    public void Delete(TaskStudent task)
+    public async Task Delete(TaskStudent task)
     {
         if (task is null)
         {
@@ -43,12 +46,9 @@ public class TaskService : ITaskService
         if (existTask is not null)
         {
             Tasks.Remove(existTask);
+            await this.storage.Save(Tasks.ToList());
         }
-        // if(!Tasks.Contains(task))
-        // {
-        //     throw new ArgumentException("Task doesn not exist");
-        // }
-        // Tasks.Remove(task);
+
     }
 
     public void Complete(TaskStudent task)
@@ -75,7 +75,7 @@ public class TaskService : ITaskService
     public async Task LoadStudents()
     {
         Tasks.Clear();
-        List<TaskStudent> loaded = await Storage.LoadAsync();
+        List<TaskStudent> loaded = await this.storage.LoadAsync();
         foreach (var taskStudent in loaded)
         {
             Tasks.Add(taskStudent);

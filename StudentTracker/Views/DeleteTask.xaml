@@ -52,7 +52,7 @@
         </Border>
         
         <Button Text="Delete Task"
-                Clicked="onDeleteTaskClicked"
+                Command="{Binding DeleteTaskCommand}"
                 BackgroundColor="#B3261E"
                 TextColor="White"
                 CornerRadius="12"

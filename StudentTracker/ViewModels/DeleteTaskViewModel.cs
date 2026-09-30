@@ -11,15 +11,18 @@ public class DeleteTaskViewModel : IDeleteTaskViewModel
 
     public TaskStudent TaskToDelete { get; set; }
     public ICommand DeleteTaskCommand { get; }
+    private INavigationService navigationService;
 
-    public DeleteTaskViewModel(ITaskService taskService)
+    public DeleteTaskViewModel(ITaskService taskService, INavigationService navigation)
     {
         this.taskService = taskService;
-        DeleteTaskCommand = new Command(DeleteTask);
+        DeleteTaskCommand = new Command(async ()=> await DeleteTask());
+        this.navigationService = navigation;
     }
 
-    public void DeleteTask()
+    private async Task DeleteTask()
     {
-        taskService.Delete(TaskToDelete);
+        await taskService.Delete(TaskToDelete);
+        await this.navigationService.PopAsync();
     }
 }

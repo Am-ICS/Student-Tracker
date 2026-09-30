@@ -13,8 +13,9 @@ public interface IMainPageViewModel
     ObservableCollection<TaskStudent> FilterStudents { get; } 
     public ICommand FilterStudentCommand { get; }
     public ICommand AddTaskNavPageCommand { get; }
-    TaskStudent? SelectTask { get; set; }
-    event Action<TaskStudent>? OnTaskSelected;
+    public ICommand ClickFilterCommand { get; }
+    ICommand TaskSelectedCommand { get; }
+    // event Action<TaskStudent>? OnTaskSelected;
     
     bool IsVisible { get; set; }
     string NameFilter { get; set; }

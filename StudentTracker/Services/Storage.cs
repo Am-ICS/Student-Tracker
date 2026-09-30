@@ -4,25 +4,37 @@ using StudentTracker.Models;
 using System.IO;
 
 namespace StudentTracker.Services;
-public static class Storage
+public class Storage : IStorage
 {
-  private static readonly string filename = "student.json";
+  private JsonSerializerSettings settings;
+  private string filePath;
+  
+  
   // private static readonly string filePath = Path.Combine(FileSystem.AppDataDirectory, filename); 
-   public static string filePath;
 
-  public static void Init(string directory)
+  public Storage(string directory, string filename, JsonSerializerSettings settings)
   {
     filePath = Path.Combine(directory, filename);
+    Console.WriteLine(Path.GetFullPath(Path.Combine(directory, filename)));
+    //throw new Exception(Path.GetFullPath(Path.Combine(directory, filename)));
+    this.settings = settings;
   }
 
-  private static readonly JsonSerializerSettings settings = new JsonSerializerSettings
+  public Storage(string directory, string filename) :
+    this(directory, filename, defaultSetting)
+  {
+    
+  }
+  
+
+  private static readonly JsonSerializerSettings defaultSetting = new JsonSerializerSettings
   {
       TypeNameHandling = TypeNameHandling.All, 
       Formatting = Formatting.Indented
   };
 
 
-  public static async Task<List<TaskStudent>> LoadAsync()
+  public async Task<List<TaskStudent>> LoadAsync()
   {
 
     if (!File.Exists(filePath))
@@ -32,7 +44,7 @@ public static class Storage
 
     StreamReader reader =  new StreamReader(filePath);
 
-    string JsonData = reader.ReadToEnd();
+    string JsonData = await reader.ReadToEndAsync();
 
     reader.Close();
 
@@ -42,7 +54,7 @@ public static class Storage
     return tasks;
   }
 
-  public static async Task Save(List<TaskStudent> tasks)
+  public async Task Save(List<TaskStudent> tasks)
   {
 
     if(tasks.Count == 0)
@@ -56,8 +68,5 @@ public static class Storage
     await writer.FlushAsync();
 
     writer.Close();
-
-   
-        
   }
 }

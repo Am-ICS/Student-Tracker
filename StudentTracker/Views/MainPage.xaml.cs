@@ -26,7 +26,7 @@ public partial class MainPage : ContentPage
 
         InitializeComponent();
 
-        ViewModel.OnTaskSelected += (task) => NavigateToTaskDetailsPage(task);
+       // ViewModel.OnTaskSelected += (task) => NavigateToTaskDetailsPage(task);
 
         BindingContext = ViewModel;
     }
@@ -41,30 +41,8 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            string appDataDirectory = FileSystem.AppDataDirectory;
-            Storage.Init(appDataDirectory);
-
             await ViewModel.LoadStudentAsync();
         });
-    }
-
-    // private async void OnAddNewTaskStudentClicked(object sender, EventArgs e)
-    // {
-    //
-    //     await Navigation.PushAsync(new AddTask(addTaskViewModel));
-    // }
-
-    public void OnFilterClicked(object sender, EventArgs e)
-    {
-        if (ViewModel.IsVisible == true)
-        {
-            ViewModel.IsVisible = false;
-        }
-        else if (ViewModel.IsVisible == false)
-        {
-            ViewModel.IsVisible = true;
-        }
-        
     }
     
 

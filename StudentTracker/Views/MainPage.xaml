@@ -32,7 +32,7 @@
 
                 <Button Grid.Column="1"
                         Text="🔎 Filter"
-                        Clicked="OnFilterClicked"
+                        Command="{Binding ClickFilterCommand}"
                         BackgroundColor="White"
                         TextColor="#006C70"
                         BorderColor="#006C70"
@@ -91,7 +91,8 @@
 
             <CollectionView
                 ItemsSource="{Binding FilterStudents}"
-                SelectedItem="{Binding SelectTask}"
+                SelectionChangedCommand="{Binding TaskSelectedCommand}"
+                SelectionChangedCommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}"
                 SelectionMode="Single">
 
                 <CollectionView.ItemsLayout>

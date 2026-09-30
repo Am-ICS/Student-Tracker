@@ -15,10 +15,11 @@ public class MainPageViewModel :IMainPageViewModel,  INotifyPropertyChanged
     public ObservableCollection<TaskStudent> StudentTasks { get; private set; }
     public ObservableCollection<TaskStudent> FilterStudents { get; private set; }
     private ITaskService taskService;
-    private TaskStudent selectedtasks;
     public ICommand FilterStudentCommand { get; }
+    public ICommand ClickFilterCommand { get; }
     public ICommand AddTaskNavPageCommand { get; }
     private INavigationService _navigationService { get; set; }
+    public ICommand TaskSelectedCommand { get; }
     
     public event PropertyChangedEventHandler PropertyChanged;
     private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
@@ -92,7 +93,13 @@ public class MainPageViewModel :IMainPageViewModel,  INotifyPropertyChanged
         }
     }
 
-    public event Action<TaskStudent> OnTaskSelected;
+    private void TaskSelected(TaskStudent task)
+    {
+        this._navigationService.GoToTaskDetailAsync(task);
+        //await Navigation.PushAsync(new DetailStudentTask(task, detailViewModel, deleteViewModel));
+    }
+
+    // public event Action<TaskStudent> OnTaskSelected;
     
     
     public MainPageViewModel(ITaskService taskService, ObservableCollection<TaskStudent> studentTasks, INavigationService navigationService)
@@ -102,21 +109,12 @@ public class MainPageViewModel :IMainPageViewModel,  INotifyPropertyChanged
         this.taskService = taskService;
         _navigationService  = navigationService;
         FilterStudentCommand = new Command(FilterSearch);
+        ClickFilterCommand = new Command(ClickFilter);
         AddTaskNavPageCommand = new Command(async()=> await AddTaskCommndNav());
+        TaskSelectedCommand = new Command<TaskStudent>(TaskSelected);
+        
     }
-
-    public TaskStudent SelectTask
-    {
-        get => selectedtasks;
-        set
-        {
-            if (selectedtasks == value)
-                return;
-
-            selectedtasks = value;
-            OnTaskSelected?.Invoke(value);
-        }
-    }
+    
 
 
     public async Task LoadStudentAsync()
@@ -134,6 +132,16 @@ public class MainPageViewModel :IMainPageViewModel,  INotifyPropertyChanged
     public void NotCompleteTask(TaskStudent task)
     {
         taskService.NotComplete(task);
+    }
+
+    private async void ClickFilter()
+    {
+        if (IsVisible)
+        {
+            IsVisible = false;
+            return;
+        }
+        IsVisible = true;
     }
 
     public async void FilterSearch()

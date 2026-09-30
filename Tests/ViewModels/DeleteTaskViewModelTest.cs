@@ -1,5 +1,5 @@
 using System.Collections.ObjectModel;
-using StudentTask;
+using Moq;
 using StudentTracker.Models;
 using StudentTracker.ViewModels;
 using StudentTracker.Services;
@@ -7,25 +7,39 @@ namespace Test.Service;
 public class DeleteTaskViewModelTest
 {
     [Fact]
-    public void TestSelectTask_TriggersEvent()
+    public void DeleteTask_RemovesTaskFromServiceTasksCollection()
     {
-        // setup
-        var service = new TaskService(new ObservableCollection<TaskStudent>());
-        var viewModel = new MainPageViewModel();
-        var task = new TaskStudent { Name = "Complete Homework" };
-        
-        TaskStudent eventResult = null;
-        viewModel.OnTaskSelected += (selectedTask) =>
-        {;
-            eventResult = selectedTask;
-        };
+        {
+            // Arrange
+            var taskToDelete = new TaskStudent { Name = "Complete Homework" };
+            //var tasks = new ObservableCollection<TaskStudent>() { taskToDelete };
+            
+            //the delete command trigger taskservice.delete
+            //so we only care if the taskservice.delete got triggered
+            
+            var mockTaskService = new Mock<ITaskService>();
+            ITaskService service = mockTaskService.Object;
+            var mockNavigationService = new Mock<INavigationService>();
+            INavigationService navigationService = mockNavigationService.Object;
+            mockNavigationService.Setup(nav=> nav.PopAsync()).Returns(Task.CompletedTask);
+            var viewModel = new DeleteTaskViewModel(service, navigationService)
+            {
+                TaskToDelete = taskToDelete
+            };
+            
+            //act
+            viewModel.DeleteTaskCommand.Execute(null);
+            
+            //assert / verify
+            mockTaskService.Verify(
+                taskService=> 
+                    taskService.Delete(taskToDelete),
+                Times.Once
+            );
+            
+        }
 
-        // invoke
-        viewModel.SelectTask = task;
 
-        // assert
-        Assert.NotNull(eventResult);
-        Assert.Equal("Complete Homework", eventResult.Name);
     }
 
 }

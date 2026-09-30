@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="StudentTracker" mvid="bc49703a0bd1414e8a1b973206a61be8">
+<api type="debug" assembly-name="StudentTracker" mvid="2440517a577c4b7e904d7e572e2265e8">
   <java-to-managed>
     <entry java-name="crc64f8ab55e5395eeffc/MainActivity" managed-name="StudentTracker.MainActivity, StudentTracker" managed-type-token-id="33554440" />
     <entry java-name="crc64f8ab55e5395eeffc/MainApplication" managed-name="StudentTracker.MainApplication, StudentTracker" managed-type-token-id="33554441" />

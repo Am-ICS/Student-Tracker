@@ -17,17 +17,17 @@ public partial class DeleteTask : ContentPage
         BindingContext = deleteTaskViewModel;
     }
 
-    private async void onDeleteTaskClicked(object sender, EventArgs e)
-    {
-        try
-        {
-            deleteTaskViewModel.DeleteTask();
-
-            await Navigation.PopToRootAsync();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Error", ex.Message, "OK");
-        }
-    }
+    // private async void onDeleteTaskClicked(object sender, EventArgs e)
+    // {
+    //     try
+    //     {
+    //         deleteTaskViewModel.DeleteTask();
+    //
+    //         await Navigation.PopToRootAsync();
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         await DisplayAlert("Error", ex.Message, "OK");
+    //     }
+    // }
 }

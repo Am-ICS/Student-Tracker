@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\Tests\\Tests.csproj": {}
+    "C:\\Users\\kscics\\Desktop\\Student-Tracker\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\StudentTracker\\StudentTracker.csproj": {
+    "C:\\Users\\kscics\\Desktop\\Student-Tracker\\StudentTracker\\StudentTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\StudentTracker\\StudentTracker.csproj",
+        "projectUniqueName": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\StudentTracker\\StudentTracker.csproj",
         "projectName": "StudentTracker",
-        "projectPath": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\StudentTracker\\StudentTracker.csproj",
-        "packagesPath": "C:\\Users\\aloos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\StudentTracker\\obj\\",
+        "projectPath": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\StudentTracker\\StudentTracker.csproj",
+        "packagesPath": "C:\\Users\\kscics\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\StudentTracker\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\aloos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kscics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0",
@@ -25,6 +30,7 @@
           "net10.0-windows10.0.19041.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -80,6 +86,10 @@
               "target": "Package",
               "version": "[10.0.20, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.21.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"
@@ -101,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -392,8 +402,12 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.11, )",
+              "version": "[10.0.12, )",
               "autoReferenced": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.21.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -411,6 +425,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[10.0.11, 10.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.Android": {
               "privateAssets": "all"
@@ -422,7 +442,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -713,8 +733,12 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.11, )",
+              "version": "[10.0.12, )",
               "autoReferenced": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.21.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -732,6 +756,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[10.0.11, 10.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.iOS": {
               "privateAssets": "all"
@@ -743,7 +773,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1034,8 +1064,12 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.11, )",
+              "version": "[10.0.12, )",
               "autoReferenced": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.21.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -1054,6 +1088,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[10.0.11, 10.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.MacCatalyst": {
               "privateAssets": "all"
@@ -1065,7 +1105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1353,6 +1393,10 @@
               "target": "Package",
               "version": "[10.0.20, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.21.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"
@@ -1383,7 +1427,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1678,22 +1722,28 @@
         }
       }
     },
-    "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\Tests\\Tests.csproj": {
+    "C:\\Users\\kscics\\Desktop\\Student-Tracker\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\aloos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\Tests\\obj\\",
+        "projectPath": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\kscics\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\aloos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kscics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -1702,8 +1752,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\StudentTracker\\StudentTracker.csproj": {
-                "projectPath": "C:\\Users\\aloos\\RiderProjects\\StudentTrackerProject\\StudentTracker\\StudentTracker.csproj"
+              "C:\\Users\\kscics\\Desktop\\Student-Tracker\\StudentTracker\\StudentTracker.csproj": {
+                "projectPath": "C:\\Users\\kscics\\Desktop\\Student-Tracker\\StudentTracker\\StudentTracker.csproj"
               }
             }
           }
@@ -1758,7 +1808,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -22,11 +22,12 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<ObservableCollection<TaskStudent>>();
         builder.Services.AddSingleton<ITaskService, TaskService>();
-        //builder.Services.AddSingleton<INavigationService, NavigationService>(); 
-        builder.Services.AddTransient<INavigationService, NavigationService>();
+        builder.Services.AddSingleton<INavigationService, NavigationService>(); 
         builder.Services.AddTransient<IMainPageViewModel, MainPageViewModel>();
         builder.Services.AddTransient<MainPage>();
-        builder.Services.AddTransient<App>();
+        builder.Services.AddSingleton<IStorage>(_ => 
+            new Storage(FileSystem.AppDataDirectory, "student.json")
+        );
 
         builder.Services.AddTransient<TaskStudent>();
         builder.Services.AddTransient<IDetailStudentTaskViewModel, DetailStudentTaskViewModel>();

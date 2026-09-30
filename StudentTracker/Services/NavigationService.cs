@@ -6,36 +6,46 @@ namespace StudentTracker.Services;
 
 public class NavigationService : INavigationService
 {
-    private IDetailStudentTaskViewModel _detailStudentTaskViewModel { get; set; }
-    private IDeleteTaskViewModel _deleteTaskViewModel { get; set; }
-  
-
-    public NavigationService(IDeleteTaskViewModel deleteTaskViewModel, 
-        IDetailStudentTaskViewModel detailStudentTaskViewModel)
+    private IServiceProvider serviceProvider;
+    private INavigation? navigation;
+    
+    public NavigationService(IServiceProvider serviceProvider)
     {
-        _detailStudentTaskViewModel = detailStudentTaskViewModel;
-        _deleteTaskViewModel = deleteTaskViewModel;
-   
+        this.serviceProvider = serviceProvider;
+    }
+
+    public void SetNavigation(INavigation navigation)
+    {
+        this.navigation = navigation;
     }
 
     public async Task PopAsync()
     {
-        await Shell.Current.Navigation.PopAsync();
+        await this.navigation.PopAsync();
     }
 
     public async Task GoToTaskDetailAsync(TaskStudent task)
     {
-        await Shell.Current.Navigation.PushAsync(new DetailStudentTask(task, _detailStudentTaskViewModel, _deleteTaskViewModel));
+        //use the service provider to get the models
+        IDetailStudentTaskViewModel detailStudentTaskViewModel = 
+            this.serviceProvider.GetRequiredService<IDetailStudentTaskViewModel>();
+        IDeleteTaskViewModel deleteTaskViewModel = this.serviceProvider.GetRequiredService<IDeleteTaskViewModel>();
+
+        await this.navigation.PushAsync(
+            new DetailStudentTask(task,
+                detailStudentTaskViewModel,
+                deleteTaskViewModel)
+        );
     }
 
     public async Task GoToAddNewTask()
     {
-        IAddTaskViewModel addTaskViewModel =
-            Application.Current.Handler.MauiContext.Services
-                .GetService<IAddTaskViewModel>();
+        //get the viewmodel
+        IAddTaskViewModel addTaskViewModel = 
+            this.serviceProvider.GetRequiredService<IAddTaskViewModel>();
+        
+        await this.navigation.PushAsync(new AddTask(addTaskViewModel));
 
-        await Shell.Current.Navigation.PushAsync(
-            new AddTask(addTaskViewModel));
     }
     
 }
