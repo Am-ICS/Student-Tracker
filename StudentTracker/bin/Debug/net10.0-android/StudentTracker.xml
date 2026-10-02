@@ -4,11 +4,99 @@
         <name>StudentTracker</name>
     </assembly>
     <members>
+        <member name="T:StudentTracker.ViewModels.MainPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.NameFilter">
+            <inheritdoc cref="F:StudentTracker.ViewModels.MainPageViewModel.nameFilter"/>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.Description">
+            <inheritdoc cref="F:StudentTracker.ViewModels.MainPageViewModel.description"/>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.FilterStudents">
+            <inheritdoc cref="F:StudentTracker.ViewModels.MainPageViewModel.filterStudents"/>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.CourseFilter">
+            <inheritdoc cref="F:StudentTracker.ViewModels.MainPageViewModel.courseFilter"/>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.IsVisible">
+            <inheritdoc cref="F:StudentTracker.ViewModels.MainPageViewModel.isVisible"/>
+        </member>
+        <member name="F:StudentTracker.ViewModels.MainPageViewModel.taskSelectedCommand">
+            <summary>The backing field for <see cref="P:StudentTracker.ViewModels.MainPageViewModel.TaskSelectedCommand"/>.</summary>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.TaskSelectedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:StudentTracker.ViewModels.MainPageViewModel.TaskSelected(StudentTracker.Models.TaskStudent)"/>.</summary>
+        </member>
+        <member name="F:StudentTracker.ViewModels.MainPageViewModel.clickFilterCommand">
+            <summary>The backing field for <see cref="P:StudentTracker.ViewModels.MainPageViewModel.ClickFilterCommand"/>.</summary>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.ClickFilterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:StudentTracker.ViewModels.MainPageViewModel.ClickFilter"/>.</summary>
+        </member>
+        <member name="F:StudentTracker.ViewModels.MainPageViewModel.filterSearchCommand">
+            <summary>The backing field for <see cref="P:StudentTracker.ViewModels.MainPageViewModel.FilterSearchCommand"/>.</summary>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.FilterSearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:StudentTracker.ViewModels.MainPageViewModel.FilterSearch"/>.</summary>
+        </member>
+        <member name="F:StudentTracker.ViewModels.MainPageViewModel.addTaskNavPageCommand">
+            <summary>The backing field for <see cref="P:StudentTracker.ViewModels.MainPageViewModel.AddTaskNavPageCommand"/>.</summary>
+        </member>
+        <member name="P:StudentTracker.ViewModels.MainPageViewModel.AddTaskNavPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:StudentTracker.ViewModels.MainPageViewModel.AddTaskNavPage"/>.</summary>
+        </member>
         <member name="T:StudentTracker.Resource">
             <summary>
             Android Resource Designer class.
             Exposes the Android Resource designer assembly into the project Namespace.
             </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NameFilter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NameFilter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FilterStudents">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FilterStudents" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseFilter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseFilter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsVisible" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NameFilter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NameFilter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FilterStudents">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FilterStudents" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseFilter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseFilter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsVisible" generated properties.</summary>
         </member>
     </members>
 </doc>

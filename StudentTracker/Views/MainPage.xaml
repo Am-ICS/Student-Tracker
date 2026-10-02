@@ -72,7 +72,7 @@
                            BackgroundColor="#F5F7FA"/>
 
                     <Button Text="Search"
-                            Command="{Binding FilterStudentCommand}"
+                            Command="{Binding FilterSearchCommand}"
                             BackgroundColor="#006C70"
                             TextColor="White"
                             CornerRadius="10"

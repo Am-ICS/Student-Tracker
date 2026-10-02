@@ -1,10 +1,10 @@
-<api type="debug" assembly-name="StudentTracker" mvid="2440517a577c4b7e904d7e572e2265e8">
+<api type="debug" assembly-name="StudentTracker" mvid="c5071a06c68a49e9bc2f58c4fe6a9e80">
   <java-to-managed>
-    <entry java-name="crc64f8ab55e5395eeffc/MainActivity" managed-name="StudentTracker.MainActivity, StudentTracker" managed-type-token-id="33554440" />
-    <entry java-name="crc64f8ab55e5395eeffc/MainApplication" managed-name="StudentTracker.MainApplication, StudentTracker" managed-type-token-id="33554441" />
+    <entry java-name="crc64f8ab55e5395eeffc/MainActivity" managed-name="StudentTracker.MainActivity, StudentTracker" managed-type-token-id="33554442" />
+    <entry java-name="crc64f8ab55e5395eeffc/MainApplication" managed-name="StudentTracker.MainApplication, StudentTracker" managed-type-token-id="33554443" />
   </java-to-managed>
   <managed-to-java>
-    <entry java-name="crc64f8ab55e5395eeffc/MainActivity" managed-name="StudentTracker.MainActivity, StudentTracker" managed-type-token-id="33554440" />
-    <entry java-name="crc64f8ab55e5395eeffc/MainApplication" managed-name="StudentTracker.MainApplication, StudentTracker" managed-type-token-id="33554441" />
+    <entry java-name="crc64f8ab55e5395eeffc/MainActivity" managed-name="StudentTracker.MainActivity, StudentTracker" managed-type-token-id="33554442" />
+    <entry java-name="crc64f8ab55e5395eeffc/MainApplication" managed-name="StudentTracker.MainApplication, StudentTracker" managed-type-token-id="33554443" />
   </managed-to-java>
 </api>

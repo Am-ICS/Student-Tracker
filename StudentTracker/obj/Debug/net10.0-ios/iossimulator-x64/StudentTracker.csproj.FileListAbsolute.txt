@@ -640,3 +640,4 @@ C:\Users\kscics\Desktop\Student-Tracker\StudentTracker\obj\Debug\net10.0-ios\ios
 C:\Users\kscics\Desktop\Student-Tracker\StudentTracker\bin\Debug\net10.0-ios\iossimulator-x64\Castle.Core.dll
 C:\Users\kscics\Desktop\Student-Tracker\StudentTracker\bin\Debug\net10.0-ios\iossimulator-x64\Moq.dll
 C:\Users\kscics\Desktop\Student-Tracker\StudentTracker\bin\Debug\net10.0-ios\iossimulator-x64\System.Diagnostics.EventLog.dll
+C:\Users\kscics\Desktop\Student-Tracker\StudentTracker\bin\Debug\net10.0-ios\iossimulator-x64\CommunityToolkit.Mvvm.dll
